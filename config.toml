@@ -1,0 +1,4 @@
+baseURL = "https://manyagents.ai/"
+languageCode = "en-us"
+title = "manyagents.ai"
+theme = "hugo-ink"
