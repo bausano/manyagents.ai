@@ -29,8 +29,8 @@ This is the home of cheela, a tribal species evolved from a plant-like
 ancestor. Because the interactions between the nuclei tick a million times
 faster than the interactions between atoms, cheela live and die on much shorter
 time scales. Their day lasts a fifth of a second and an individual cheela lives
-about 40 minutes. [They hatch from eggs and live in schools looked after by old
-cheela.]
+about 40 minutes. It hatches from an egg and spends its childhood with other
+clan youngsters, never knowing its parents.
 
 Soon after cheela master agriculture, a massive volcano disrupts their farms.
 Most clans try to escape by traveling along the magnetic lines. But one clan
@@ -53,19 +53,18 @@ pulses down on the star, one pulse a second: one-two-three dot-dash number
 series; Dragon's Egg and Dragon Slayer in a 53 by 71 dot-dash pattern; basic
 arithmetics. Cheela soon realise that the messages aren't divine and Dragon
 Slayer isn't God. What God would spend a tenth of a cheela lifespan to say that
-2 + 2 is 4? They call us "the Slow ones". Cheela overcome tremendous obstacles
+2 + 2 is 4? They call us "the Slow ones." Cheela overcome tremendous obstacles
 to setup a basic reply device and only after receiving first signals do the
 human scientists learn that the intelligence on Dragon's Egg thinks million
 times faster.
 
 Humans start transmitting entire encyclopedia to fast-forward cheela
-civilization. They learn about the "hard direction". Machiavelli's ideas
+civilization. They learn about the "hard direction." Machiavelli's ideas
 transform politics. Cheela are named after famous people: there are Leonardos
-and Einsteins, Xs and Ys. They also learn more about neutron stars and Dragon's
-Egg. One cheela correlates laying of the egg in the supernova explosion with
-large scale changes in Earth's biosphere and a mutation which differentiates
-Homo Sapiens from other great apes, tying the string which connects the fate of
-the two civilizations.
+and Einsteins, Xs and Ys. They learn more about neutron stars and Dragon's Egg.
+Cheela correlate the supernova which laid the Dragon's Egg with large scale
+changes in Earth's biosphere. It's also the time when Home Sapiens
+differentiated from other great apes.
 
 TODO: short friendships, surpasing human knowledge, encrypting knowledge,
 meetup and farewell
@@ -74,12 +73,11 @@ In the end, Dragon's Egg is a testament to the human captivation by
 extraterrestrial intelligence. And although recent research suggests that the
 specific conditions which gave rise to the cheela civilization are unlikely to
 be present on the crust of a neutron star[^2], the message of the book rings
-strong nonetheless:
+strong nonetheless: The more different extraterrestrial life is to us, the more
+interesting will our encounter be.
 
-<TODO: write down message of the book>
-
-And if we one day establish a communication link with ET, are we going to be
-"the Slow ones" to each other?
+And if we one day establish a communication link with an intelligent ET, are we
+going to be "the Slow ones" to each other?
 
 [^1]: [The Magnetic Field of a Neutron Star,  Michel van Biezen
   ](https://youtube.com/watch?v=AiBJyFY2TQ0)
