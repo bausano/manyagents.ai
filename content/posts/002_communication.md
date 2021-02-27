@@ -5,7 +5,7 @@ tags: ["communication"]
 ---
 
 Communication is as an emergent behaviour in multi-agent systems. An agent
-under this behaviour exhibits signals with the _intention_ of informing peers
+under this behaviour transmits signals with the _intention_ of informing peers
 about an internal or external state. An agent's peers are other agents in the
 environment whose _goals are aligned_ with goals of the agent. All agents
 pursuing common goal in an environment form a collective.
@@ -32,11 +32,13 @@ evident that MAS theory is valuable.
 
 Communication in a collective serves two purposes:
 1. to convey an agent's intention;
-2. to share compressed information about agent's perceived environment.
+2. to share compressed information about 
+    - agent's perceived environment or
+    - other agents.
 
 A precondition for conveying intentions is the capability of planning ahead. A
 hierarchy of control can only emerge if agents plan. However, reasoning behind
 a message encoding sensory stimulus processed by agent's internal state can be
-just as complex. The agent may want to consider whether the receiving peer know
-about a fact already or whether a fact is valuable to peers at all. 
+just as complex. The agent may want to consider whether the receiving peer
+knows about a fact already or whether a fact is valuable to peers at all. 
 

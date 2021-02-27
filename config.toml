@@ -2,3 +2,9 @@ baseURL = "https://manyagents.ai/"
 languageCode = "en-us"
 title = "manyagents.ai"
 theme = "hugo-ink"
+
+[params]
+    mode = "dark"
+
+    description = "Blog dedicated to multi-agents systems."
+
