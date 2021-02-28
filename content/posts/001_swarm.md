@@ -70,7 +70,7 @@ receiver in all directions (shock wave shape) with ~ equal speed.
 Consider the following algorithm:
 
 ---
-The control localizers emit `QUERY` message with following parameters:
+The controllers emit `QUERY` message with following parameters:
 1. `HOPS_TO_GO` is an integer decremented with each relay. A localizer which
    decrements this parameter to 0 stops relaying the message and stores it in
    memory instead (for some short period of time $T$).
@@ -84,7 +84,7 @@ The control localizers emit `QUERY` message with following parameters:
 
 We can interpret `HOPS_TO_GO` as a distance from a controller to the localizers
 in the area we want to query. But since the message propagates like a shock
-wave, the `HOPS_TO_GO` "distance" is a radius around the control localizer. We
+wave, the `HOPS_TO_GO` "distance" is a radius around the controllers. We
 therefore combine messages from several controllers and target the intersection
 of their shock waves with the `UNION` parameter.
 
@@ -95,12 +95,12 @@ translation between hops and distance beyond $O$.
 We introduce a forth parameter `TAIL` to the `QUERY` message. `TAIL` parameter
 contains another `QUERY` message. The recursive nature of `TAIL` works like a
 schedule. Following figures depict how this concept works in a _2-space_ with 2
-initial control localizers $S_1$ and $S_2$.
+initial controllers $S_1$ and $S_2$.
 
 ![First step of using two localizers targeting two points A and B in front of
 them](/localizer_2d_1.png)
 
-We send 2 `QUERY` messages from each controllers. $S_1$ sets `HOPS_TO_GO` to
+We send 2 `QUERY` messages from each controller. $S_1$ sets `HOPS_TO_GO` to
 translation of the distance $|S_1 A|$. Analogically distances $|S_1 B|, |S_2
 A|, |S_2 B|$ correspond to one message each. `UNION` is set to 2 for all
 messages, because we expect intersection of 2 circles in both A and B.

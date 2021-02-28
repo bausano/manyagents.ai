@@ -4,7 +4,5 @@ title = "manyagents.ai"
 theme = "hugo-ink"
 
 [params]
-    mode = "dark"
-
     description = "Blog dedicated to multi-agents systems."
 
