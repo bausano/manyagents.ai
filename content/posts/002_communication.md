@@ -71,7 +71,7 @@ and an entity whose movement is typically given by an escape algorithm. If they
 get sufficiently close, they are rewarded.
 
 The advantages of this experiment are: it's simple to set up and there are only
-actions for movement in a 2D plane. The disadvantages are: it's not clear that
+actions for movement in a plane. The disadvantages are: it's not clear that
 communication enables more efficient strategies and it doesn't scale to more
 than a handful of agents.
 
@@ -92,14 +92,80 @@ develop a scheme which the agents adhere to. I expect to see performance gains
 as the agents learn to use signals to follow simple hunting strategies based on
 co-ordination.
 
----
+## Territory capture
+To patch issues with the predator-prey pursuit, I propose an experiment in
+which two collectives (red squad and green squad) capture territory in a
+zero-sum game.
 
-[^1]: [Mohit Sharma, Arjun Sharma: Coordinated Multi-Agent Learning](https://mohitsharma0690.github.io/files/multi-agent-communication/report.pdf)
-[^2]: [Kam-Chuen Jim, C. Lee Giles: Talking Helps: Evolving Communicating Agents for the Predator-Prey Pursuit Problem](https://clgiles.ist.psu.edu/papers/Artificial-Life-2000-talking-helps.pdf)
-[^3]: [T. Haynes, S. Sen, D. Schoenefeld & R. Wainwright: Evolving a team](https://www.aaai.org/Papers/Symposia/Fall/1995/FS-95-01/FS95-01-004.pdf)
-[^4]: [T. Haynes, and S. Sen.: Cooperation of the Fittest](https://www.researchgate.net/profile/Thomas-Haynes/publication/2264683_Cooperation_of_the_Fittest/links/573b72fe08aea45ee84063fa/Cooperation-of-the-Fittest.pdf)
-[^5]: [J. Denzinger, M. Fuchs: Experiments in Learning Prototypical Situations for Variants of thePursuit Game](https://www.aaai.org/Papers/ICMAS/1996/ICMAS96-006.pdf)
+The grid is made of fields (A1, B1, ...) and each field is made of some blocks.
+An example below is made of 16 fields, each containing 2 blocks. An agent is
+rewarded when its squad captures a field (such as red squad did with A1). The
+grid size can be scaled with the number of agents.
+
+```
+  A  B  C  D
++--+--+--+--+
+|rr|  |  |  |  1
++--+--+--+--+
+|  |rg|  |  |  2
++--+--+--+--+
+|  |  |gg|  |  3
++--+--+--+--+
+|  |  |  |  |  4
++--+--+--+--+
+```
+
+There are two kinds of agents:
+1. _Attackers_ which lay blocks and remove opposing squad's block. On top of
+   the collective reward, they are individually rewarded when they remove an
+   opposing squad's block. Their actions are: movement along a plane, lay
+   block, remove block. The last two actions apply to the block closest to
+   them. 
+2. _Supports_ which periodically generate new blocks and distribute them among
+   allied attackers. Their actions are: movement along a plane, distribute
+   blocks. The last action applies to the nearest attacker within some radius.
+
+I imagine the ratio of attackers to supports about 5:1. However, similarly to
+other parameters, the ratio will be adjusted and its implications discussed
+when the experiment is implemented.
+
+Depending on the number of agents, the communication can be a "chat room" where
+everyone reads every message, or proximity based.
+
+This experiment consists of the same three stages as the predator-prey pursuit:
+no communication, unsupervised communication and supervised communication.
+
+## Liquid population
+This variant of the previous experiments assumes at least some primitive
+communication emerged in the third stage. Henceforth I shall refer to it as a
+jargon.
+
+An important property of a jargon is opaqueness - or lack thereof. If a new
+individual is introduced into a group (a slice of a collective which shares a
+jargon), all individuals should converge on a similar or identical jargon. As
+an example, if a group of [predators](#predator-prey-pursuit) is extended with
+an untrained agent, the agent must eventually acquire the group's jargon. 
+
+To select for the efficacy of acquiring a jargon, agents [of both
+squads](#territory-capture) are periodically on random replaced with untrained
+agents. In another words, simulate mortality and natality.
+
+## Chain of command
 
 
 <!-- References -->
+[^1]: [Mohit Sharma, Arjun Sharma: Coordinated Multi-Agent Learning][ref-1]
+[^2]: [Kam-Chuen Jim, C. Lee Giles: Talking Helps: Evolving Communicating
+  Agents for the Predator-Prey Pursuit Problem][ref-2]
+[^3]: [T. Haynes, S. Sen, D. Schoenefeld, R. Wainwright: Evolving a
+  team][ref-3]
+[^4]: [T. Haynes, S. Sen: Cooperation of the Fittest][ref-4]
+[^5]: [J. Denzinger, M. Fuchs: Experiments in Learning Prototypical Situations
+  for Variants of the Pursuit Game][ref-5]
+
 [tag-communication]: /tags/communication/
+[ref-1]: https://mohitsharma0690.github.io/files/multi-agent-communication/report.pdf
+[ref-2]: https://clgiles.ist.psu.edu/papers/Artificial-Life-2000-talking-helps.pdf
+[ref-3]: https://www.aaai.org/Papers/Symposia/Fall/1995/FS-95-01/FS95-01-004.pdf
+[ref-4]: https://www.researchgate.net/profile/Thomas-Haynes/publication/2264683_Cooperation_of_the_Fittest/links/573b72fe08aea45ee84063fa/Cooperation-of-the-Fittest.pdf
+[ref-5]: https://www.aaai.org/Papers/ICMAS/1996/ICMAS96-006.pdf
